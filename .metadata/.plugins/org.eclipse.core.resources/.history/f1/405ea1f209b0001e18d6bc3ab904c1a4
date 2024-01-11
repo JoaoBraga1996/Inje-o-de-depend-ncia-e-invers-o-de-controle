@@ -1,0 +1,17 @@
+package optionals;
+
+import java.util.Optional;
+
+public class ExemploOptional {
+	public static void main(String[] args) {
+
+		String valor = "123";
+		Optional<String> optionalValor = Optional.ofNullable(valor);
+
+		// Converter o valor para um número, se presente
+		Optional<Integer> resultado = optionalValor.map(Integer::parseInt);
+
+		// Imprimir o resultado
+		resultado.ifPresent(numero -> System.out.println("Número: " + numero));
+	}
+}

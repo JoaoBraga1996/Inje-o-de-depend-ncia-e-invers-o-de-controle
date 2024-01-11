@@ -1,0 +1,16 @@
+package application;
+
+public class PayService {
+	
+	// vc não quer alto acoplamento
+	private DeductionService deductionService = new MgDeductionService();
+	
+	public double tax(double amount) {
+		amount =  amount  - deductionService.deduction(amount);
+		 return amount * 0.2;
+	}
+	
+	
+	
+
+}

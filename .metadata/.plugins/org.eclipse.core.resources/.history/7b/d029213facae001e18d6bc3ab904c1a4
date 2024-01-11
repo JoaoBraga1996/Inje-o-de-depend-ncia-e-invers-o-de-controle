@@ -1,0 +1,6 @@
+package application;
+
+public interface Duplicador {
+	int duplicar(int num);
+
+}

@@ -1,0 +1,15 @@
+package application;
+
+public class Application {
+
+	public static void main(String[] args) {
+
+		PayService payService = new PayService(new MgDeductionService());
+
+		double tax = payService.tax(1000.0);
+
+		System.out.print(tax);
+
+	}
+
+}

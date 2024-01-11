@@ -1,0 +1,18 @@
+package application;
+
+public class PayService {
+
+	private DeductionService deductionService;
+
+	// ela ainda tem um dependencia com o deductionService, mas não sabe qual é a
+	// implementação
+	public PayService(DeductionService deductionService) {
+		this.deductionService = deductionService;
+	}
+
+	public double tax(double amount) {
+		amount = amount - deductionService.deduction(amount);
+		return amount * 0.2;
+	}
+
+}

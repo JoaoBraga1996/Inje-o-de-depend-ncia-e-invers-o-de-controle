@@ -1,0 +1,23 @@
+package optionals;
+
+import java.util.Optional;
+
+public class ExemploOptional {
+	public static void main(String[] args) {
+
+		String s = "1";
+		converteEmNumero(s).ifPresent(n -> System.out.print(n));
+
+	}
+
+	public static Optional<Integer> converteEmNumero(String numero) {
+		try {
+			Integer integer = Integer.valueOf(numero);
+			return Optional.of(integer);
+		} catch (Exception e) {
+			return Optional.empty();
+
+		}
+
+	}
+}

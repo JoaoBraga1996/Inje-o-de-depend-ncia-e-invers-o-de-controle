@@ -1,0 +1,37 @@
+package optionals;
+
+import java.util.Optional;
+
+public class ExemploOptional {
+	public static void main(String[] args) {
+
+		String s = "1";
+		converteEmNumero(s).ifPresent(n -> System.out.println(n));
+
+		System.out.println("----------------------------------");
+
+		// se ele não conseguir converter vai retornar o 2, orElse é uma especie de
+		// valor default
+		String s1 = "uma string";
+		Integer numero = converteEmNumero(s1).orElse(2);
+		System.out.println(numero);
+
+		System.out.println("----------------------------------");
+
+		String s2 = "dá uma olhada no meu git ai ! ";
+		Integer integer = converteEmNumero(s2).orElseGet(() -> 5);
+		System.out.println(integer);
+		
+	}
+
+	public static Optional<Integer> converteEmNumero(String numero) {
+		try {
+			Integer integer = Integer.valueOf(numero);
+			return Optional.of(integer);
+		} catch (Exception e) {
+			return Optional.empty();
+
+		}
+
+	}
+}

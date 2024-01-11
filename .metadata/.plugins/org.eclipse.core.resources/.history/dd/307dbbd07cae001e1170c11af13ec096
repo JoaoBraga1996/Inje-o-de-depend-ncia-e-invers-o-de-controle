@@ -1,0 +1,27 @@
+package application;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		Set<String> lista = new HashSet<>();
+
+		lista.add("Elemento 1");
+		lista.add("Elemento 2");
+		lista.add("Elemento 3");
+		lista.add("Elemento 4");
+		lista.add("Elemento 4");
+		
+
+		for (String elem : lista) {
+			System.out.println(elem);
+		}
+		
+		
+		
+
+	}
+}

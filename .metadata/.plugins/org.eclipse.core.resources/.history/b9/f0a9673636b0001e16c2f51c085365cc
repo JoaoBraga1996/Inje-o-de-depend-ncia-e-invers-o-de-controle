@@ -1,0 +1,17 @@
+package application;
+
+public class PayService {
+	
+	
+	//isso deixa um alto acoplamento entre os dois serviços 
+	private DeductionService deductionService = new MgDeductionService();
+	
+	public double tax(double amount) {
+		amount =  amount  - deductionService.deduction(amount);
+		 return amount * 0.2;
+	}
+	
+	
+	
+
+}

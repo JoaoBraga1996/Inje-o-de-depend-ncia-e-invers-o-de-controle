@@ -1,0 +1,44 @@
+package streams;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+public class ExemploReduce {
+
+	public static void main(String[] args) {
+		// reduce é pegar todos os elementos de um string e transformar em uma coisa só
+
+		
+		
+		String s = "Dê uma olhada no meu git";
+		String[] split = s.split(" ");
+		List<String> listStr = Arrays.asList(split);
+		
+		
+		
+		// reduce - some
+		List<Integer> lista = Arrays.asList(1, 2, 3, 4, 5, 6);
+
+		Optional<Integer> soma = lista.stream().reduce((n1, n2) -> n1 + n2);
+
+		System.out.println(soma.get());
+
+		System.out.println("--------------------------------");
+
+		// reduce multiplicação
+		Optional<Integer> multiplicação = lista.stream().reduce((n1, n2) -> n1 * n2);
+
+		System.out.println(multiplicação.get());
+		
+		System.out.println("--------------------------------");
+		//reduce concatenando
+		
+		Optional<String> concatenando = listStr.stream().reduce((n1, n2) -> n1.concat(n2));
+		System.out.println(concatenando);
+		
+		
+
+	}
+
+}

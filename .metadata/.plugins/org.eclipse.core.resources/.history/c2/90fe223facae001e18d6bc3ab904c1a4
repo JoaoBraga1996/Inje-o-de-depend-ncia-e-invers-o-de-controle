@@ -1,0 +1,11 @@
+package application;
+
+public class ExemploExpressaoLambda {
+
+	public static void main(String[] args) {
+		Duplicador duplicador = (num) -> num * 2;
+
+		System.out.println(duplicador.duplicar(5)); // Saída: 10
+	}
+
+}
